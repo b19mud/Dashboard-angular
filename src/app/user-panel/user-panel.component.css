@@ -1,0 +1,12 @@
+span{
+    margin-top: 5px;
+    margin-left: 0%;
+    font-size: 50px;
+    }
+#float_div_left{
+    float: left;
+
+}
+#float_div_right{
+    float: right;
+}

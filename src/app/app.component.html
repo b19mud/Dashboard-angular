@@ -64,7 +64,7 @@
 </div>
 <div class="container-fluid" id="main">
 <div class="row">
-    <div class="col-md-2" id="ui_height" [style.background-color]='green'>
+    <div class="col-md-2" id="ui_height" style="background-color: greenyellow;">
       <div class="menu">
         <ul>
           <li></li>
@@ -74,7 +74,7 @@
         </ul>
       </div>
     </div>
-    <div class="col-md-10" style="background-color: dimgray;"> 
+    <div class="col-md-10" [style.background]="'dimgray'" [style.height.px]="ui_height_test"> 
       <div class="row">
         <div class="col-md-4">
           <app-user-panel id="model"></app-user-panel>
