@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'aaaa';
+  style_attr="height:"
+  ui_height = "500px";
+  currentStyles:{};
+  setCurrentStyles(){
+    var ui_height:any = document.documentElement.clientHeight || document.body.clientHeight;
+    this.currentStyles={
+      'height' : ui_height,
+    };
+  }
+
+  constructor() {
+    
+  }
+  ngOnInit() {
+
+  }
+
 }

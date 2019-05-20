@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
-import { TestBed } from '@angular/core/testing';
-import { bindCallback } from 'rxjs';
 @Component({
-  selector: 'app-energy',
-  templateUrl: './energy.component.html',
-  styleUrls: ['./energy.component.css']
+  selector: 'app-power-grid',
+  templateUrl: './power-grid.component.html',
+  styleUrls: ['./power-grid.component.css']
 })
-export class EnergyComponent implements OnInit {
+export class PowerGridComponent implements OnInit {
 
   options: any ={};
   constructor() {
@@ -21,8 +19,8 @@ export class EnergyComponent implements OnInit {
   }
   initCharts(){
     const ec:any = echarts;
-    let barChart = ec.init(document.getElementById('barChart'))
-    let barChartOption = {
+    let lineChart = ec.init(document.getElementById('lineChart'))
+    let lineChartOption = {
       title : {
         text : 'test'
       },
@@ -91,7 +89,6 @@ export class EnergyComponent implements OnInit {
           }
       ],
     };
-    barChart.setOption(barChartOption);
+    lineChart.setOption(lineChartOption);
   }
-
 }

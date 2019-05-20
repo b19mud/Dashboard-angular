@@ -7,8 +7,8 @@
   <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div>
-    <nav class="navbar navbar-default">
+<div id="navbar">
+    <nav class="navbar navbar-inverse" style="margin-bottom: 0px">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -62,47 +62,40 @@
         </div><!-- /.container-fluid -->
       </nav>
 </div>
+<div class="container-fluid" id="main">
 <div class="row">
-    <div class="col-md-2" style="background-color: chartreuse; height: 500px;">
+    <div class="col-md-2" id="ui_height" [style.background-color]='green'>
       <div class="menu">
         <ul>
-          <li>The Light</li>
+          <li></li>
           <li>The City</li>
           <li>The IsLand</li>
           <li>The Food</li>
         </ul>
       </div>
     </div>
-    <div class="col-md-10 container-fluid" style="background-color: chocolate">
+    <div class="col-md-10" style="background-color: dimgray;"> 
       <div class="row">
-        <div class="col-md-6" style="background-color: brown">
-          666
+        <div class="col-md-4">
+          <app-user-panel id="model"></app-user-panel>
         </div>
-        <div class="col-md-6" style="background-color: cyan">
-          666
+        <div class="col-md-4">
+          <app-equip-panel id="model"></app-equip-panel>
+        </div>
+        <div class="col-md-4">
+          <app-cost id="model"></app-cost>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-5" style="background-color: white">
-          <div class="row">
-            <div class="col-md-6" style="background-color: darkred">
-              666
-            </div>
-            <div class="col-md-6" style="background-color: darkviolet">
-              666
-            </div>
-          </div>
-          <app-user-panel></app-user-panel>
+        <div class="col-md-6">
+          <app-power-grid id="model"></app-power-grid>
         </div>
-        <div class="col-md-7">
-          777
+        <div class="col-md-6">   
+          <app-energy id="model"></app-energy>
         </div>
       </div>
-      
     </div>
-
-    
 </div>
-  
+</div>
 </body>
 </html>

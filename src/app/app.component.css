@@ -1,4 +1,17 @@
-nav{
-    background-color: rgb(30, 147, 177);
-    color: white;
+/*.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
 }
+.row > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+#model{
+    margin: 10px 5px 10px 5px;
+
+}
+*/
