@@ -8,7 +8,7 @@
 </head>
 <body>
 <div id="navbar">
-    <nav class="navbar navbar-inverse" style="margin-bottom: 0px">
+    <nav class="navbar" style="margin-bottom: 0px;background-color: rgb(23, 179, 163);color: white">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -24,7 +24,8 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+              <!--<li (click)="excahngeSide()" class="active"><span class="glyphicon glyphicon-menu-hamburger"></span></li>-->
+              <li class="active"><a (click)="excahngeSide()"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
               <li><a href="#">Link</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -64,7 +65,7 @@
 </div>
 <div class="container-fluid" id="main">
 <div class="row">
-    <div class="col-md-2" id="ui_height" style="background-color: greenyellow;">
+    <div class="col-md-2" id="ui_height" style="background-color:rgb(38, 50, 56);color:white;">
       <div class="menu">
         <ul>
           <li></li>
@@ -74,7 +75,7 @@
         </ul>
       </div>
     </div>
-    <div class="col-md-10" [style.background]="'dimgray'" [style.height.px]="ui_height_test"> 
+    <div class="col-md-10" [style.background]="'rgb(241,244,245)'" [style.height.px]="ui_height_test" [style.padding-top]="'15px'"> 
       <div class="row">
         <div class="col-md-4">
           <app-user-panel id="model"></app-user-panel>
@@ -88,7 +89,7 @@
       </div>
       <div class="row">
         <div class="col-md-6">
-          <app-power-grid id="model"></app-power-grid>
+          <app-power-grid id="model" style="width: 100%"></app-power-grid>
         </div>
         <div class="col-md-6">   
           <app-energy id="model"></app-energy>

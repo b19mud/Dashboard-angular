@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   ui_height:number;
-  ui_height_test:any = document.body.clientHeight || document.documentElement.clientHeight;
+  ui_height_test:number = document.body.clientHeight || document.documentElement.clientHeight-51.51;
+  
   constructor() {
     console.log(this.ui_height_test);
   }
@@ -15,6 +16,13 @@ export class AppComponent {
 
   }
   setUI_Height(){
+  }
+
+  excahngeSide() {
+    const target = document.querySelector('#ui_height');
+    const wrap = document.querySelector('.col-md-10');
+    wrap.classList.toggle('w97');
+    target.classList.toggle('w0');
   }
 
 }

@@ -21,12 +21,12 @@ export class EnergyComponent implements OnInit {
   }
   initCharts(){
     const ec:any = echarts;
-    let barChart = ec.init(document.getElementById('barChart'))
-    let barChartOption = {
+    let lineChart = ec.init(document.getElementById('lineChart'))
+    let lineChartOption = {
       title : {
-        text : 'test'
+        text : '能源（水气热）'
       },
-      backgroundColor : 'rgb(128,128,128)',
+      backgroundColor : 'white',
       tooltip : {
         trigger: 'none'
       },
@@ -50,8 +50,8 @@ export class EnergyComponent implements OnInit {
       ],
       series : [
           {
-              name:'新签合同额',
-              type:'bar',
+              name:'水',
+              type:'line',
               smooth:true,
               itemStyle : {
                   normal : {
@@ -64,7 +64,7 @@ export class EnergyComponent implements OnInit {
 
           },
           {
-              name:'营业收入',
+              name:'气',
               type:'line',
               smooth:true,
               itemStyle: {
@@ -77,7 +77,7 @@ export class EnergyComponent implements OnInit {
               data:[3, 2, 4, 7, 0, 3, 1,3,4,1,2,3]
           },
           {
-              name:'归属母公司净利润',
+              name:'热',
               type:'line',
               smooth:true,
               itemStyle: {
@@ -91,7 +91,7 @@ export class EnergyComponent implements OnInit {
           }
       ],
     };
-    barChart.setOption(barChartOption);
+    lineChart.setOption(lineChartOption);
   }
 
 }

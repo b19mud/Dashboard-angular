@@ -19,25 +19,28 @@ export class PowerGridComponent implements OnInit {
   }
   initCharts(){
     const ec:any = echarts;
-    let lineChart = ec.init(document.getElementById('lineChart'))
-    let lineChartOption = {
+    let barChart = ec.init(document.getElementById('barChart'))
+    let barChartOption = {
       title : {
-        text : 'test'
+        text : '电力'
       },
-      backgroundColor : 'rgb(128,128,128)',
+      backgroundColor : 'white',
       tooltip : {
         trigger: 'none'
       },
+
       toolbox: {
           show : false,
       },
       legend:{
           padding:0
       },
+      coordinateSystem:'cartesian2d',
       xAxis : [
           {
               type : 'category',
-              boundaryGap : false,
+              boundaryGap : true,
+              
               data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
           }
       ],
@@ -48,47 +51,16 @@ export class PowerGridComponent implements OnInit {
       ],
       series : [
           {
-              name:'新签合同额',
+              name:'电力值',
               type:'bar',
               smooth:true,
-              itemStyle : {
-                  normal : {
-                      lineStyle:{
-                          color:'#c8c8c8'
-                      }
-                  }
-              },
+              color:'rgb(0,147,157)',
+              barWidth:25,
               data:[10, 2, 5, 4, 6, 3, 7,2,2,3,6,7],
 
-          },
-          {
-              name:'营业收入',
-              type:'line',
-              smooth:true,
-              itemStyle: {
-                  normal : {
-                      lineStyle:{
-                          color:'#1ab394'
-                      }
-                  }
-              },
-              data:[3, 2, 4, 7, 0, 3, 1,3,4,1,2,3]
-          },
-          {
-              name:'归属母公司净利润',
-              type:'line',
-              smooth:true,
-              itemStyle: {
-                  normal : {
-                      lineStyle:{
-                          color:'#ff713a'
-                      }
-                  }
-              },
-              data:[10, 2, 6, 3, 2, 9, 10,3,4,8,4,3]
           }
       ],
     };
-    lineChart.setOption(lineChartOption);
+    barChart.setOption(barChartOption);
   }
 }

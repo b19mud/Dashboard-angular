@@ -82,7 +82,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js",
+              "https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"

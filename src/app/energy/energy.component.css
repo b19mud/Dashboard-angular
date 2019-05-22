@@ -1,3 +1,7 @@
 .row{
     padding-bottom: -99px;
 }
+#barChart{
+    box-shadow: 0 0 5px #ccc;
+    border-radius:25px;
+}
