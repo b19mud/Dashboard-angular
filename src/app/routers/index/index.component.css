@@ -1,0 +1,12 @@
+.list-item {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.list-icon {
+  float: right;
+}
+
+.test{
+  background-color: red;
+}

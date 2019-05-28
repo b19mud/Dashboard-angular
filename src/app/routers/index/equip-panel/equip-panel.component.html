@@ -1,0 +1,29 @@
+<nb-card>
+  <!-- Default panel contents -->
+  <nb-card-header>设备情况</nb-card-header>
+  <nb-card-body>
+    <div>
+      <p class="list-item">设备总数</p>
+      <div class="list-icon">
+        {{devCount}}
+        <i class="fa fa-hdd"></i>
+      </div>
+    </div>
+    <hr/>
+    <div>
+      <p class="list-item">电表总数</p>
+      <div class="list-icon">
+        {{eleDevCount}}
+        <i class="fa fa-bolt"></i>
+      </div>
+    </div>
+    <hr/>
+    <div>
+      <p class="list-item">水气热表总数</p>
+      <div class="list-icon">
+        {{otherDevCount}}
+        <i class="fa fa-tint"></i>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

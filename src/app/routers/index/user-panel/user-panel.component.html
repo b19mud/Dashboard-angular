@@ -1,0 +1,29 @@
+<nb-card>
+  <nb-card-header>用户情况</nb-card-header>
+  <nb-card-body>
+    <div>
+      <p class="list-item">用户总数</p>
+      <div class="list-icon">
+        {{userCount}}
+        <i class="fa fa-user"></i>
+      </div>
+    </div>
+
+    <hr/>
+    <div>
+      <p class="list-item">近一周用户增幅</p>
+      <div class="list-icon">
+        {{userCountWeekly}}
+        <i class="fa fa-user"></i>
+      </div>
+    </div>
+    <hr/>
+    <div>
+      <p class="list-item">近一月用户增幅</p>
+      <div class="list-icon">
+        {{userCountMonthly}}
+        <i class="fa fa-user"></i>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>
