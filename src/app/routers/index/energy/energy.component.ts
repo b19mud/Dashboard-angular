@@ -22,73 +22,80 @@ export class EnergyComponent implements OnInit {
     const ec:any = echarts;
     let lineChart = ec.init(document.getElementById('lineChart'))
     let lineChartOption = {
-      title : {
-        text : '能源（水气热）'
-      },
-      backgroundColor : 'white',
-      tooltip : {
-        trigger: 'none'
-      },
-      toolbox: {
-          show : false,
-      },
-      legend:{
-          padding:0
-      },
-      xAxis : [
-          {
-              type : 'category',
-              boundaryGap : false,
-              data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
-          }
-      ],
-      yAxis : [
-          {
-              type : 'value'
-          }
-      ],
-      series : [
-          {
-              name:'水',
-              type:'line',
-              smooth:true,
-              itemStyle : {
-                  normal : {
-                      lineStyle:{
-                          color:'#c8c8c8'
-                      }
-                  }
-              },
-              data:[10, 2, 5, 4, 6, 3, 7,2,2,3,6,7],
-
-          },
-          {
-              name:'气',
-              type:'line',
-              smooth:true,
-              itemStyle: {
-                  normal : {
-                      lineStyle:{
-                          color:'#1ab394'
-                      }
-                  }
-              },
-              data:[3, 2, 4, 7, 0, 3, 1,3,4,1,2,3]
-          },
-          {
-              name:'热',
-              type:'line',
-              smooth:true,
-              itemStyle: {
-                  normal : {
-                      lineStyle:{
-                          color:'#ff713a'
-                      }
-                  }
-              },
-              data:[10, 2, 6, 3, 2, 9, 10,3,4,8,4,3]
-          }
-      ],
+        title: {
+            text: '一天用电量分布',
+            subtext: '纯属虚构'
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross'
+            }
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        xAxis:  {
+            type: 'category',
+            boundaryGap: false,
+            data: ['00:00', '01:15', '02:30', '03:45', '05:00', '06:15', '07:30', '08:45', '10:00', '11:15', '12:30', '13:45', '15:00', '16:15', '17:30', '18:45', '20:00', '21:15', '22:30', '23:45']
+        },
+        yAxis: {
+            type: 'value',
+            axisLabel: {
+                formatter: '{value} W'
+            },
+            axisPointer: {
+                snap: true
+            }
+        },
+        visualMap: {
+            show: false,
+            dimension: 0,
+            pieces: [{
+                lte: 6,
+                color: 'green'
+            }, {
+                gt: 6,
+                lte: 8,
+                color: 'red'
+            }, {
+                gt: 8,
+                lte: 14,
+                color: 'green'
+            }, {
+                gt: 14,
+                lte: 17,
+                color: 'red'
+            }, {
+                gt: 17,
+                color: 'green'
+            }]
+        },
+        series: [
+            {
+                name:'用电量',
+                type:'line',
+                smooth: true,
+                data: [300, 280, 250, 260, 270, 300, 550, 500, 400, 390, 380, 390, 400, 500, 600, 750, 800, 700, 600, 400],
+                markArea: {
+                    data: [ [{
+                        name: '早高峰',
+                        xAxis: '07:30'
+                    }, {
+                        xAxis: '10:00'
+                    }], [{
+                        name: '晚高峰',
+                        xAxis: '17:30'
+                    }, {
+                        xAxis: '21:15'
+                    }] ]
+                }
+            }
+        ],
     };
     lineChart.setOption(lineChartOption);
   }

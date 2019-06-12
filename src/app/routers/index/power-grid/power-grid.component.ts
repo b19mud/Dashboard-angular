@@ -21,45 +21,45 @@ export class PowerGridComponent implements OnInit {
     const ec:any = echarts;
     let barChart = ec.init(document.getElementById('barChart'));
     let barChartOption = {
-      title : {
-        text : '电力'
-      },
-      backgroundColor : 'white',
-      tooltip : {
-        trigger: 'none'
-      },
-
-      toolbox: {
-          show : false,
-      },
-      legend:{
-          padding:0,
-      },
-      coordinateSystem:'cartesian2d',
-      xAxis : [
-          {
-              type : 'category',
-              boundaryGap : true,
-              
-              data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
-          }
-      ],
-      yAxis : [
-          {
-              type : 'value'
-          }
-      ],
-      series : [
-          {
-              name:'电力值',
-              type:'bar',
-              smooth:true,
-              color:'rgb(0,147,157)',
-              barWidth:25,
-              data:[10, 2, 5, 4, 6, 3, 7,2,2,3,6,7],
-
-          }
-      ],
+      title: {
+        text: '数据对比',
+        subtext: '数据来自网络'
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['上月', '本月']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'value',
+        boundaryGap: [0, 0.01]
+    },
+    yAxis: {
+        type: 'category',
+        data: ['收入','燃料','热','气','水','电力']
+    },
+    series: [
+        {
+            name: '上月',
+            type: 'bar',
+            data: [18203, 23489, 29034, 104970, 131744, 630230]
+        },
+        {
+            name: '本月',
+            type: 'bar',
+            data: [19325, 23438, 31000, 121594, 134141, 681807]
+        }
+    ],
     };
     barChart.setOption(barChartOption);
   }
